@@ -231,6 +231,7 @@
   @media (max-width: 768px) {
     nav { padding: 12px 24px; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
     .page-hero { padding: 120px 24px 60px; }
     .team-section { padding: 60px 24px; }
     .team-grid { grid-template-columns: 1fr; gap: 28px; max-width: 420px; margin-left: auto; margin-right: auto; margin-bottom: 60px; }
@@ -239,6 +240,68 @@
     .section-sep { padding: 0 24px; }
     footer { padding: 40px 24px; }
     .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
+  /* HAMBURGER MENU */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--gold);
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .nav-mobile-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(13,8,18,0.97);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 80px 24px 40px;
+  }
+  .nav-mobile-overlay.open { display: flex; }
+  .nav-mobile-overlay a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 16px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    transition: color 0.2s;
+  }
+  .nav-mobile-overlay a:hover,
+  .nav-mobile-overlay a.active { color: var(--gold); }
+  .nav-mobile-overlay a.nav-cta {
+    margin-top: 24px;
+    background: var(--gold);
+    color: var(--dark) !important;
+    font-weight: 500;
+    border-bottom: none;
+    padding: 14px 48px;
+    width: auto;
   }
 </style>
 </head>
@@ -257,7 +320,19 @@
     <li><a href="firstfruit.html">First Fruit</a></li>
     <li><a href="give.html" class="nav-cta">Give</a></li>
   </ul>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav-mobile-overlay" id="navOverlay">
+  <a href="index.html#welcome">Our Story</a>
+    <a href="index.html#worship">Worship</a>
+    <a href="index.html#beliefs">Beliefs</a>
+    <a href="bios.html">Meet Our Pastor</a>
+    <a href="team.html" class="active">Meet the Team</a>
+    <a href="join.html">Join Us</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="firstfruit.html">First Fruit</a>
+    <a href="give.html" class="nav-cta">Give</a>
+</div>
 
 <!-- Page Hero -->
 <div class="page-hero">
@@ -426,6 +501,22 @@
 
 <script>
 (function() {
+  // Hamburger menu
+  var hamburger = document.getElementById("navHamburger");
+  var overlay = document.getElementById("navOverlay");
+  hamburger.addEventListener("click", function() {
+    hamburger.classList.toggle("open");
+    overlay.classList.toggle("open");
+    document.body.style.overflow = overlay.classList.contains("open") ? "hidden" : "";
+  });
+  overlay.querySelectorAll("a").forEach(function(a) {
+    a.addEventListener("click", function() {
+      hamburger.classList.remove("open");
+      overlay.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+  });
+
   var obs = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
       if (e.isIntersecting) e.target.classList.add('visible');
