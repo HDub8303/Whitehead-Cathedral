@@ -225,22 +225,6 @@
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* RESPONSIVE */
-  @media (max-width: 1024px) {
-    .team-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
-  }
-  @media (max-width: 768px) {
-    nav { padding: 12px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .page-hero { padding: 120px 24px 60px; }
-    .team-section { padding: 60px 24px; }
-    .team-grid { grid-template-columns: 1fr; gap: 28px; max-width: 420px; margin-left: auto; margin-right: auto; margin-bottom: 60px; }
-    .deacons-section { padding: 40px 24px; }
-    .deacons-placeholder { padding: 60px 24px; }
-    .section-sep { padding: 0 24px; }
-    footer { padding: 40px 24px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  }
 
   /* HAMBURGER MENU */
   .nav-hamburger {
@@ -303,6 +287,24 @@
     padding: 14px 48px;
     width: auto;
   }
+
+  @media (max-width: 1024px) {
+    .team-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 12px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-hero { padding: 120px 24px 60px; }
+    .team-section { padding: 60px 24px; }
+    .team-grid { grid-template-columns: 1fr; gap: 28px; max-width: 420px; margin-left: auto; margin-right: auto; margin-bottom: 60px; }
+    .deacons-section { padding: 40px 24px; }
+    .deacons-placeholder { padding: 60px 24px; }
+    .section-sep { padding: 0 24px; }
+    footer { padding: 40px 24px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
 </style>
 </head>
 <body>

@@ -240,29 +240,6 @@
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 1024px) {
-    nav { padding: 12px 24px; }
-    .nav-links { gap: 16px; }
-    .welcome { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
-    .beliefs-inner { grid-template-columns: 1fr; }
-    .beliefs-left { position: static; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-    .stats-inner { grid-template-columns: repeat(2,1fr); }
-    .services-inner { grid-template-columns: 1fr; }
-    .service-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
-    .worship-cards { grid-template-columns: 1fr; }
-  }
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .worship-section, .beliefs, .join-section, footer { padding: 60px 24px; }
-    .footer-top { grid-template-columns: 1fr; gap: 32px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-    .beliefs-right { grid-template-columns: 1fr; }
-    .stats-inner { grid-template-columns: repeat(2,1fr); }
-    .welcome { padding: 60px 24px; }
-    .stats-section { padding: 60px 24px; }
-  }
 
   /* HAMBURGER MENU */
   .nav-hamburger {
@@ -325,6 +302,31 @@
     padding: 14px 48px;
     width: auto;
   }
+
+  @media (max-width: 1024px) {
+    nav { padding: 12px 24px; }
+    .nav-links { gap: 16px; }
+    .welcome { grid-template-columns: 1fr; gap: 48px; padding: 80px 24px; }
+    .beliefs-inner { grid-template-columns: 1fr; }
+    .beliefs-left { position: static; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .services-inner { grid-template-columns: 1fr; }
+    .service-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .worship-cards { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .worship-section, .beliefs, .join-section, footer { padding: 60px 24px; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+    .beliefs-right { grid-template-columns: 1fr; }
+    .stats-inner { grid-template-columns: repeat(2,1fr); }
+    .welcome { padding: 60px 24px; }
+    .stats-section { padding: 60px 24px; }
+  }
+
 </style>
 </head>
 <body>

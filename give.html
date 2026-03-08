@@ -209,18 +209,6 @@
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 900px) {
-    nav { padding: 14px 24px; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .page-hero { padding: 120px 24px 60px; }
-    .giving-banner, .content-wrapper { padding: 40px 24px; }
-    .intro-grid, .giving-methods, .cards-row { grid-template-columns: 1fr; gap: 24px; }
-    .sig-list { grid-template-columns: 1fr; }
-    .first-fruit-fund { padding: 36px 24px; }
-    .together-section { padding: 70px 24px; }
-    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
-  }
 
   /* HAMBURGER MENU */
   .nav-hamburger {
@@ -283,6 +271,20 @@
     padding: 14px 48px;
     width: auto;
   }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 24px; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .page-hero { padding: 120px 24px 60px; }
+    .giving-banner, .content-wrapper { padding: 40px 24px; }
+    .intro-grid, .giving-methods, .cards-row { grid-template-columns: 1fr; gap: 24px; }
+    .sig-list { grid-template-columns: 1fr; }
+    .first-fruit-fund { padding: 36px 24px; }
+    .together-section { padding: 70px 24px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+
 </style>
 </head>
 <body>
